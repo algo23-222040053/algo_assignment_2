@@ -28,3 +28,14 @@
   - Rate Of Change(ROC)：它是一个动量振荡器，衡量当前价格与过去 n 期价格之间的百分比变化。 ROC 值较高的资产被认为更有可能超买和较低的 ROC；超卖的可能性更大。
   - 动量 (MOM) ：它是证券价格或交易量的加速度；价格变化的速度。
   对目标变量、信号建模都可能有用，当然影响程度也不同。
+  
+  ![image](https://github.com/algo23-222040053/algo_assignment_2/assets/98448461/0d3a232f-42ae-4381-a1d1-3d569aead9ea)
+
+  我们可以看到由于特征工程而创建的线性相关性更高的特征组。如果在特征矩阵中使用，基础数据集特征很可能对目标变量变化几乎没有影响。另一方面，新创建的特征具有相当广泛的相关值，而且非常重要；与目标变量、信号的相关性不是太高。
+
+## 模型拟合与评估
+  尝试了多种算法：LR,TREE,LDA,KNN,NB,GBM,XGB,CAT,RF
+  使用初始特征值与增加技术指标特征值预测准确率的对比如下
+  ![image](https://github.com/algo23-222040053/algo_assignment_2/assets/98448461/3449722d-3b4a-45c5-9434-c773d6a4cd5e)
+  ![image](https://github.com/algo23-222040053/algo_assignment_2/assets/98448461/77949dd1-6931-423b-ac4b-6703f19edc56)
+
