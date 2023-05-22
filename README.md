@@ -1,5 +1,6 @@
 # algo_assignment_2
-- <Building An Asset Trading Strategy> https://www.kaggle.com/code/shtrausslearning/building-an-asset-trading-strategy
+- <Building An Asset Trading Strategy> 
+  https://www.kaggle.com/code/shtrausslearning/building-an-asset-trading-strategy
 
 ## 数据选取
   文章中的研究对象为比特币（12年-20年）的tick数据，这里改为上证指数（00年-20年）的日频数据。
@@ -35,7 +36,20 @@
 
 ## 模型拟合与评估
   尝试了多种算法：LR,TREE,LDA,KNN,NB,GBM,XGB,CAT,RF
+  
   使用初始特征值与增加技术指标特征值预测准确率的对比如下
+  
   ![image](https://github.com/algo23-222040053/algo_assignment_2/assets/98448461/3449722d-3b4a-45c5-9434-c773d6a4cd5e)
   ![image](https://github.com/algo23-222040053/algo_assignment_2/assets/98448461/77949dd1-6931-423b-ac4b-6703f19edc56)
-
+  
+  原文章中比特币数据结果与上证指数结果并不具有完全的可比性，但结果趋于一致。
+  ### 结果1分析
+  - 我们可以看到，cross_val_score徘徊在准确度=[0.5,0.85]的区域，这表明仅使用与一个资产相关的基线特征（股票的开盘收盘最高最低成交量数据）对资产方向性预测的准确性存疑。
+  - 大多数模型的训练得分往往高于交叉验证得分。
+  - Decision Tree Classifier & Random Forest即使很少估计可以达到非常高的分数，可能存在过度拟合，交叉验证分数很低。
+ ### 结果2分析
+  - 与基线模型相比，我们可以看到准确性得分有了非常显着的提高。
+  - 线性判别分析表现出奇的好（训练集和交叉验证）。在得分较高的模型 LDA 中，不出意料地是更高级的模型，GBM、XGB、CAT、RF 在全样本中表现良好，以及
+与监督学习模型相比，kNN和 GNB无监督模型表现稍差。
+  
+  
